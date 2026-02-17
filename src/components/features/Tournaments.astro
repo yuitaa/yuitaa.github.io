@@ -1,0 +1,57 @@
+---
+interface Tournament {
+  title: string;
+
+  date: string;
+  role: string;
+  details?: string[];
+}
+
+const tournaments: Tournament[] = [
+  {
+    title: 'Unrailed! Community Party',
+    date: '2025/12/13',
+    role: 'ウェブサイト制作/出場（む～ぽかゆ）',
+    details: ['ウェブサイト制作', 'タイムアタック 合計2,120m 総合5位'],
+  },
+  {
+    title: 'Halloween Cup',
+    date: '2025/11/15',
+    role: 'Day 1出場（Flame Chompers!）',
+    details: ['対戦 準決勝進出'],
+  },
+  {
+    title: 'U.L.T.R.A.',
+    date: '2025/08/23',
+    role: '運営',
+    details: ['ウェブサイト制作', '運営おてつだい'],
+  },
+  {
+    title: 'Unrailed! Community Cup vol.3',
+    date: '2025/05/24',
+    role: '出場（シビレーザー）',
+    details: ['Day 1 タイムアタック 合計2,571m 総合4位', 'Day 2 対戦 準優勝'],
+  },
+];
+---
+
+<section class="typography">
+  <h2>Tournaments</h2>
+  <ul>
+    {
+      tournaments.map((item) => (
+        <li>
+          <span class="font-bold">{item.title}</span> (
+          <time datetime={item.date}>{item.date.replaceAll('-', '/')}</time> ) {item.role}
+          {item.details && (
+            <ul>
+              {item.details.map((detail) => (
+                <li>{detail}</li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))
+    }
+  </ul>
+</section>
