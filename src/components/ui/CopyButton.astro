@@ -7,7 +7,7 @@ const { copyText, label = copyText } = Astro.props;
 ---
 
 <copy-button data-value={copyText}>
-  <button type="button" class="btn cursor-pointer underline decoration-dotted">
+  <button type="button" class="btn cursor-pointer text-cyan-900 hover:underline">
     <span class="label">{label}</span>
   </button>
   <span hidden class="feedback rounded-full text-lime-800 select-none">✓</span>
