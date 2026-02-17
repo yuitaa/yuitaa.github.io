@@ -1,0 +1,38 @@
+---
+import CopyButton from '@/components/ui/CopyButton.astro';
+import '@/styles/typography.css';
+
+interface friendCodeProps {
+  label: string;
+  code: string;
+}
+
+const friendCodes: friendCodeProps[] = [
+  {
+    label: 'Discord',
+    code: 'yu.it.a',
+  },
+  {
+    label: 'Steam',
+    code: '1612683852',
+  },
+  {
+    label: '雀魂',
+    code: '89555910',
+  },
+];
+---
+
+<section class="typography">
+  <h2>Friend Codes</h2>
+  <ul>
+    {
+      friendCodes.map(({ label, code }) => (
+        <li>
+          <span class="font-bold">{label}: </span>
+          <CopyButton copyText={code} />
+        </li>
+      ))
+    }
+  </ul>
+</section>

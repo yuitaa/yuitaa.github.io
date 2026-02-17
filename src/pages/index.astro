@@ -1,5 +1,6 @@
 ---
 import FindMeOn from '@/components/features/FindMeOn.astro';
+import FriendCodes from '@/components/features/FriendCodes.astro';
 import IconCarousel from '@/components/features/IconCarousel/IconCarousel.astro';
 import Speedrun from '@/components/features/Speedrun.astro';
 import { siteConfig } from '@/config';
@@ -16,6 +17,7 @@ const currentYear = new Date().getFullYear();
     </header>
     <main class="grid h-fit gap-4">
       <FindMeOn />
+      <FriendCodes />
       <Speedrun />
     </main>
 
