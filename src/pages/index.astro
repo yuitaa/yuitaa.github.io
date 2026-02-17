@@ -4,6 +4,8 @@ import IconCarousel from '@/components/features/IconCarousel/IconCarousel.astro'
 import Speedrun from '@/components/features/Speedrun.astro';
 import { siteConfig } from '@/config';
 import Layout from '@/layouts/Layout.astro';
+
+const currentYear = new Date().getFullYear();
 ---
 
 <Layout bodyClasses="flex justify-center px-4 py-15">
@@ -16,5 +18,9 @@ import Layout from '@/layouts/Layout.astro';
       <FindMeOn />
       <Speedrun />
     </main>
+
+    <footer class="w-full text-center text-gray-500 md:col-span-2">
+      <p>&copy; {currentYear} {siteConfig.name}</p>
+    </footer>
   </div>
 </Layout>
