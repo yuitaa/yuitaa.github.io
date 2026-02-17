@@ -1,0 +1,76 @@
+---
+import IconImg from '@/assets/icons/piggy-ghost.webp';
+import ColorPalette from '../ColorPalette.astro';
+import IconCardContainer from './IconCardContainer.astro';
+
+const palette = [
+  '#f4f4f4',
+  '#dcdcdc',
+  '#bebebe',
+  '#263423',
+  '#be656c',
+  '#d87e86',
+  '#f8a2aa',
+];
+---
+
+<IconCardContainer>
+  <div
+    class="w-full overflow-hidden rounded-xl shadow-xl"
+    slot="icon-image"
+    id="piggy-ghost-icon-image">
+    <img
+      src={IconImg.src}
+      alt="貯金箱ワゴン・ゴーストワゴンのアイコン"
+      class="pixelated w-full"
+      loading="lazy"
+    />
+  </div>
+
+  <div class="text-center">
+    <h3 class="font-serif text-2xl">Piggy & Ghost</h3>
+    <hr class="my-2 border-gray-300" />
+    <div class="wrap-break-word break-keep">
+      「Unrailed!」<wbr />「Unrailed 2」<wbr />より<wbr />貯金箱ワゴンと<wbr
+      />ゴーストワゴン
+    </div>
+    <input
+      type="range"
+      max="360"
+      value="106"
+      class="color-selector my-1 w-full"
+      id="piggy-ghost-color-selector"
+      aria-label="アイコンの背景色の色相調整"
+      aria-controls="piggy-ghost-icon-image"
+    />
+  </div>
+
+  <ColorPalette colors={palette} slot="palette" />
+</IconCardContainer>
+
+<script>
+  const iconImage = document.getElementById('piggy-ghost-icon-image');
+  const colorSelector = document.getElementById('piggy-ghost-color-selector');
+
+  if (iconImage && colorSelector instanceof HTMLInputElement) {
+    const updateHueRotate = () => {
+      const hueValue = colorSelector.value;
+      iconImage.style.setProperty('--hue-rotate', hueValue + 'deg');
+    };
+
+    colorSelector.addEventListener('input', updateHueRotate);
+    updateHueRotate();
+  }
+</script>
+
+<style>
+  #piggy-ghost-icon-image {
+    background-color: oklch(77.26% 0.13118 var(--hue-rotate));
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    #piggy-ghost-icon-image > img {
+      animation: --BounceAnimation infinite 3s ease-in-out;
+    }
+  }
+</style>

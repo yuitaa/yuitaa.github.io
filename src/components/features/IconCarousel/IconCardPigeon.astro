@@ -1,0 +1,22 @@
+---
+import IconImg from '@/assets/icons/pigeon.webp';
+import { Image } from 'astro:assets';
+import IconCardContainer from './IconCardContainer.astro';
+---
+
+<IconCardContainer>
+  <Image
+    src={IconImg}
+    alt="鳩の写真"
+    class="w-full"
+    loading="lazy"
+    class:list={['rounded-full shadow-xl']}
+    slot="icon-image"
+  />
+
+  <div class="text-center">
+    <h3 class="font-serif text-2xl">Pigeon</h3>
+    <hr class="my-2 border-gray-300" />
+    <div>@静岡県某所</div>
+  </div>
+</IconCardContainer>

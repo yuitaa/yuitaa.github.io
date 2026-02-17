@@ -1,0 +1,33 @@
+---
+import IconCardChino from '@/components/features/IconCarousel/IconCardChino.astro';
+import IconCardPigeon from '@/components/features/IconCarousel/IconCardPigeon.astro';
+import IconCardPiggy from '@/components/features/IconCarousel/IconCardPiggy.astro';
+import IconCardPiggyAndGhost from '@/components/features/IconCarousel/IconCardPiggyAndGhost.astro';
+import IconCardYuita from '@/components/features/IconCarousel/IconCardYuita.astro';
+import IconCardZundamon from '@/components/features/IconCarousel/IconCardZundamon.astro';
+
+import '@/styles/iconCarousel.css';
+---
+
+<section>
+  <h2 class="font-serif text-xl">Icon Gallery</h2>
+  <p>各所で使用しているアイコン</p>
+  <div class="w-full">
+    <div class="carousel-container carousel-scrollbar flex w-full flex-row overflow-x-auto" id="carousel-container">
+      <div class="w-1/4 shrink-0"></div>
+      <IconCardYuita />
+      <IconCardPiggyAndGhost />
+      <IconCardPiggy />
+      <IconCardPigeon />
+      <!--<IconCardChino />-->
+      <IconCardZundamon />
+      <div class="w-1/4 shrink-0"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .carousel-container {
+    scroll-snap-type: x mandatory;
+  }
+</style>

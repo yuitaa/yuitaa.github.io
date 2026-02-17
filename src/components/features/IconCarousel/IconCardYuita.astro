@@ -1,0 +1,44 @@
+---
+import IconImg from '@/assets/icons/yuita.webp';
+import { Image } from 'astro:assets';
+import ColorPalette from '../ColorPalette.astro';
+import IconCardContainer from './IconCardContainer.astro';
+
+const palette = [
+  '#ffffff',
+  '#d4d4d4',
+  '#000000',
+  '#250801',
+  '#3c1e16',
+  '#5d443b',
+  '#e5cc92',
+  '#ffe1ac',
+  '#517a44',
+  '#729253',
+  '#7c9f67',
+  '#574c3a',
+  '#786842',
+  '#393b4f',
+  '#4d536a',
+  '#c9edfe',
+];
+---
+
+<IconCardContainer>
+  <Image
+    src={IconImg}
+    alt="yuitaのアイコン"
+    class="pixelated w-full"
+    quality="max"
+    loading="eager"
+    class:list={['rounded-xl shadow-xl']}
+    slot="icon-image"
+  />
+
+  <div class="text-center">
+    <h3 class="font-serif text-2xl">yuita</h3>
+    <div class="text text-gray-500">a.k.a. koteiou</div>
+  </div>
+
+  <ColorPalette colors={palette} slot="palette" />
+</IconCardContainer>

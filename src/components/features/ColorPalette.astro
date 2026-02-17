@@ -1,0 +1,25 @@
+---
+interface Props {
+  colors: string[];
+}
+
+const { colors } = Astro.props;
+---
+
+<div class="grid grid-cols-8">
+  {
+    colors.map((color) => (
+      <div
+        class="palette-color aspect-square"
+        style={`--palette-color:${color}`}
+        title={color}
+      />
+    ))
+  }
+</div>
+
+<style>
+  .palette-color {
+    background-color: var(--palette-color);
+  }
+</style>

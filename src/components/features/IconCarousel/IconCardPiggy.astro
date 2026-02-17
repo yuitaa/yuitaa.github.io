@@ -1,0 +1,39 @@
+---
+import IconImg from '@/assets/icons/piggy.webp';
+import ColorPalette from '../ColorPalette.astro';
+import IconCardContainer from './IconCardContainer.astro';
+
+const palette = ['#263423', '#be656c', '#d87e86', '#f8a2aa'];
+---
+
+<IconCardContainer>
+  <div class="w-full overflow-hidden rounded-xl p-[10%] shadow-xl" slot="icon-image" id="piggy-icon-image">
+    <img src={IconImg.src} alt="貯金箱ワゴンのアイコン" class="pixelated w-full" loading="lazy" />
+  </div>
+
+  <div class="text-center">
+    <h3 class="cursor-pointer font-serif text-2xl underline" id="piggy-title">Piggy</h3>
+    <hr class="my-2 border-gray-300" />
+    <div>ゴーストワゴンのアイコンから貯金箱ワゴンが独立した</div>
+  </div>
+
+  <ColorPalette colors={palette} slot="palette" />
+</IconCardContainer>
+
+<script>
+  const title = document.getElementById('piggy-title');
+  if (title instanceof HTMLElement) {
+    title.addEventListener('click', () => {
+      document.documentElement.classList.toggle('piggy-cursor');
+      title.classList.toggle('cursor-pointer');
+    });
+  }
+</script>
+
+<style>
+  @media (prefers-reduced-motion: no-preference) {
+    #piggy-icon-image > img {
+      animation: --BounceAnimation infinite 3s ease-in-out;
+    }
+  }
+</style>

@@ -1,0 +1,77 @@
+---
+import IconImg from '@/assets/icons/chino.webp';
+import { Image } from 'astro:assets';
+
+import ColorPalette from '@/components/features/ColorPalette.astro';
+import IconCardContainer from './IconCardContainer.astro';
+
+const palette = [
+  '#515352',
+  '#fbfbfd',
+  '#fef4ed',
+  '#fdded1',
+  '#daa69f',
+  '#b4909b',
+  '#472b24',
+  '#cbd4f8',
+  '#8e98d5',
+  '#6068a7',
+  '#4553ac',
+  '#1b2290',
+];
+---
+
+<IconCardContainer>
+  <a href="https://x.com/usagi_anime/status/1908323706780188731" target="_blank" id="chino-link" slot="icon-image">
+    <Image
+      src={IconImg}
+      alt="チノのアイコン"
+      class="w-full"
+      quality="max"
+      loading="lazy"
+      class:list={['rounded-full shadow-xl']}
+    />
+  </a>
+
+  <div class="text-center">
+    <h3 class="font-serif text-2xl">Chino</h3>
+    <hr class="my-2 border-gray-300" />
+    <div class="wrap-break-word break-keep">
+      『ご注文はうさぎですか？』<wbr />より <wbr />香風智乃<wbr />（チノ）
+    </div>
+  </div>
+
+  <ColorPalette colors={palette} slot="palette" />
+</IconCardContainer>
+
+<script>
+  const tweetUrl = 'https://x.com/usagi_anime/status/';
+  const tweetIds = [
+    '1798919133201158378',
+    '1801446208009081232',
+    '1829763766306959577',
+    '1837319680052363378',
+    '1839930101636706487',
+    '1860149882209927197',
+    '1903250279275049414',
+    '1908323706780188731',
+    '1910860422850494572',
+    '1913397132993921499',
+    '1928617428705226960',
+    '1933690857452155000',
+    '1938764290955321676',
+    '1943837718879834548',
+    '1956521288949780856',
+    '1974278302350381286',
+    '1992035306489442326',
+  ];
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const randomIndex = Math.floor(Math.random() * tweetIds.length);
+    const randomTweetId = tweetIds[randomIndex];
+    const chinoLink = document.getElementById('chino-link');
+    if (chinoLink instanceof HTMLAnchorElement) {
+      chinoLink.href = `${tweetUrl}${randomTweetId}`;
+    }
+  });
+</script>

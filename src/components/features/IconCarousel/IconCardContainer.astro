@@ -1,0 +1,13 @@
+<div class="carousel-item flex w-4/5 shrink-0 grow-0 flex-col gap-2 p-4">
+  <slot name="icon-image" />
+  <div class="flex grow flex-col justify-center">
+    <slot />
+  </div>
+  <slot name="palette" />
+</div>
+
+<style>
+  .carousel-item {
+    scroll-snap-align: center;
+  }
+</style>

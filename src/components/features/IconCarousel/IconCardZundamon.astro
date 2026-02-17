@@ -1,0 +1,58 @@
+---
+import IconStaticImg from '@/assets/icons/zundamon-static.webp';
+import IconImg from '@/assets/icons/zundamon.webp';
+import Image from 'astro/components/Image.astro';
+import ColorPalette from '../ColorPalette.astro';
+import IconCardContainer from './IconCardContainer.astro';
+
+const palette = [
+  '#e9ecd6',
+  '#676754',
+  '#c69750',
+  '#d6ba53',
+  '#ffefaf',
+  '#fefefe',
+  '#dea1cc',
+  '#728270',
+  '#889a70',
+  '#97ad7a',
+  '#a6cb8d',
+];
+---
+
+<IconCardContainer>
+  <a href="https://zunko.jp/" target="_blank" slot="icon-image">
+    <picture>
+      <source
+        type="image/webp"
+        srcset={IconStaticImg.src}
+        media="(prefers-reduced-motion: reduce)"
+      />
+      <Image
+        src={IconImg}
+        alt="ずんだもんのアイコン"
+        class="w-full"
+        loading="lazy"
+        quality="max"
+        class:list={['rounded-xl shadow-xl']}
+      />
+    </picture>
+  </a>
+
+  <div class="text-center">
+    <h3 class="font-serif text-2xl">Zundamon</h3>
+    <hr class="my-2 border-gray-300" />
+    <div class="wrap-break-word break-keep">
+      <a
+        href="https://zunko.jp/guideline.html"
+        target="_blank"
+        class="text-lime-800 underline underline-offset-4"
+        aria-label="東北ずん子・ずんだもんプロジェクトガイドライン準拠"
+        >(ず・ω・きょ)</a
+      ><wbr />「東北ずん子・<wbr />ずんだもんプロジェクト」<wbr />より <wbr
+      />ずんだもん
+    </div>
+  </div>
+
+  <ColorPalette colors={palette} slot="palette" />
+</IconCardContainer>
