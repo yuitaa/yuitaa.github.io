@@ -1,0 +1,47 @@
+---
+import '@/styles/typography.css';
+
+interface socialLinksProps {
+  label: string;
+  url: string;
+  handle: string;
+}
+
+const speedrunRecords = [
+  {
+    href: 'https://youtube.com/playlist?list=PLzok6euqU3kwZVdrWvIMRwcdFW2KzQAYA',
+    text: '[21:01:47] Unrailed!/全実績（参考記録）',
+  },
+  {
+    href: 'https://youtu.be/bcavXn9ipYw',
+    text: '[01:08:02.383] Unrailed!/Endless/Easy/1 Player/RS',
+  },
+  {
+    href: 'https://youtu.be/5Fm5g989_ZU',
+    text: '[01:01:47.000] Unrailed!/Endless/Medium/1 Player/RS',
+  },
+  {
+    href: 'https://youtu.be/K9LJR2uVRp0',
+    text: '[01:04:06.650] Unrailed 2/Endless/1 Player/RS/v354 (参考記録)',
+  },
+  {
+    href: 'https://youtu.be/TnHzAQC8_hE',
+    text: '[00:37:41.483] Unrailed 2/Endless/4 Players/RS/v519 (参考記録)',
+  },
+];
+---
+
+<section class="typography">
+  <h2>Speedrun</h2>
+  <ul>
+    {
+      speedrunRecords.map(({ href, text }) => (
+        <li>
+          <a href={href} target="_blank" rel="noopener noreferrer">
+            {text}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</section>

@@ -1,0 +1,21 @@
+@import 'tailwindcss';
+
+.typography {
+  @apply grid gap-4;
+
+  h2 {
+    @apply font-serif text-xl;
+  }
+
+  a {
+    @apply hover:underline;
+  }
+
+  ul {
+    @apply list-disc pl-8;
+  }
+
+  ul ul {
+    list-style-type: circle;
+  }
+}

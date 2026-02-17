@@ -1,0 +1,60 @@
+---
+import '@/styles/typography.css';
+
+interface socialLinksProps {
+  label: string;
+  url: string;
+  handle: string;
+}
+
+const socialLinks: socialLinksProps[] = [
+  {
+    label: 'Twitter / X',
+    url: 'https://twitter.com/koteiou',
+    handle: '@koteiou',
+  },
+  {
+    label: 'Twitch',
+    url: 'https://www.twitch.tv/yuitaaaaa',
+    handle: 'yuitaaaaa',
+  },
+  {
+    label: 'YouTube',
+    url: 'https://www.youtube.com/@yuita',
+    handle: '@yuita',
+  },
+  { label: 'note', url: 'https://note.com/yuita', handle: 'yuita' },
+  {
+    label: 'speedrun.com',
+    url: 'https://www.speedrun.com/ja-JP/users/yuita_',
+    handle: 'yuita_',
+  },
+  {
+    label: 'Steam',
+    url: 'https://steamcommunity.com/profiles/76561199572949580/',
+    handle: 'yuita',
+  },
+  {
+    label: 'GitHub',
+    url: 'https://github.com/yuitaa/',
+    handle: 'yuitaa',
+  },
+];
+---
+
+<section class="typography">
+  <h2>Find me on...</h2>
+  <ul>
+    {
+      socialLinks.map(({ label, url, handle }) => (
+        <li>
+          <a href={url} target="_blank" rel="noopener noreferrer">
+            <span>
+              <span class="font-bold">{label}:</span> {handle}
+            </span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</section>

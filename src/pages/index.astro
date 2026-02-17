@@ -1,15 +1,20 @@
 ---
+import FindMeOn from '@/components/features/FindMeOn.astro';
 import IconCarousel from '@/components/features/IconCarousel/IconCarousel.astro';
+import Speedrun from '@/components/features/Speedrun.astro';
 import { siteConfig } from '@/config';
 import Layout from '@/layouts/Layout.astro';
 ---
 
 <Layout bodyClasses="flex justify-center px-4 py-15">
-  <div class="relative grid w-full max-w-96 grid-cols-1 gap-4 md:max-w-215 md:grid-cols-[260px_auto]">
-    <div class="sticky top-4 grid h-fit grid-cols-1 gap-12">
+  <div class="relative grid w-full max-w-96 grid-cols-1 gap-6 md:max-w-215 md:grid-cols-[260px_auto]">
+    <header class="sticky top-4 grid h-fit grid-cols-1 gap-12">
       <h1 class="text-center text-3xl font-bold">{siteConfig.title}</h1>
       <IconCarousel />
-    </div>
-    <div></div>
+    </header>
+    <main class="grid h-fit gap-4">
+      <FindMeOn />
+      <Speedrun />
+    </main>
   </div>
 </Layout>
