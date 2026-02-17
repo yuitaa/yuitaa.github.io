@@ -8,7 +8,7 @@
   }
 
   a {
-    @apply hover:underline;
+    @apply text-cyan-900 hover:underline;
   }
 
   ul {
