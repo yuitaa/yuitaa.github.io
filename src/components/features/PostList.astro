@@ -1,7 +1,26 @@
 ---
 import PostCard, { type PostCardProps } from '@/components/ui/PostCard.astro';
+import { noteArticles } from '@/data/noteArticles';
+import { unrailedMaps } from '@/data/unrailedMaps';
 
-const posts: PostCardProps[] = [];
+const posts: PostCardProps[] = [
+  ...unrailedMaps.map((map) => ({
+    title: map.name,
+    date: map.lastUploadDate,
+    url: `https://u2.unrailed-online.com/#/map/${map.customMapId}`,
+    thumbnail: `/images/u2-map/${map.customMapId}.webp`,
+    source: 'U2',
+  })),
+  ...noteArticles.map((article) => ({
+    title: article.name,
+    date: article.publishAt,
+    url: article.noteUrl,
+    thumbnail: article.eyecatch,
+    source: 'note',
+  })),
+].sort((a, b) => {
+  return new Date(b.date).getTime() - new Date(a.date).getTime();
+});
 ---
 
 <section id="blog" class="grid gap-4">
