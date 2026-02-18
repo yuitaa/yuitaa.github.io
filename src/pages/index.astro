@@ -2,6 +2,7 @@
 import FindMeOn from '@/components/features/FindMeOn.astro';
 import FriendCodes from '@/components/features/FriendCodes.astro';
 import IconCarousel from '@/components/features/IconCarousel/IconCarousel.astro';
+import PostList from '@/components/features/PostList.astro';
 import Speedrun from '@/components/features/Speedrun.astro';
 import Tournaments from '@/components/features/Tournaments.astro';
 import { siteConfig } from '@/config';
@@ -21,6 +22,7 @@ const currentYear = new Date().getFullYear();
       <FriendCodes />
       <Tournaments />
       <Speedrun />
+      <PostList />
     </main>
 
     <footer class="w-full text-center text-gray-500 md:col-span-2">

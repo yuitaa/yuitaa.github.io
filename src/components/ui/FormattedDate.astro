@@ -1,0 +1,24 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'time'> {
+  date: Date;
+}
+
+const { date, class: className, ...attrs } = Astro.props;
+
+const formattedDate = new Intl.DateTimeFormat('ja-JP', {
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit',
+  timeZone: 'Asia/Tokyo',
+})
+  .format(date)
+  .replace(/\//g, '.');
+
+const isoDate = date.toISOString();
+---
+
+<time datetime={isoDate} class:list={[className]} {...attrs}>
+  {formattedDate}
+</time>

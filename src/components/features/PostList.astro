@@ -1,0 +1,13 @@
+---
+import PostCard, { type PostCardProps } from '@/components/ui/PostCard.astro';
+
+const posts: PostCardProps[] = [];
+---
+
+<section id="blog" class="grid gap-4">
+  <h2 class="font-serif text-xl">Post List</h2>
+
+  <div class="grid grid-cols-1 gap-1 md:grid-cols-2 lg:grid-cols-3">
+    {posts.map((post) => <PostCard {...post} />)}
+  </div>
+</section>
