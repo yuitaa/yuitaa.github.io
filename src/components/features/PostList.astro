@@ -15,7 +15,7 @@ const posts: PostCardProps[] = [
     title: article.name,
     date: article.publishAt,
     url: article.noteUrl,
-    thumbnail: article.eyecatch,
+    thumbnail: `/images/note/${article.id}.webp`,
     source: 'note',
   })),
 ].sort((a, b) => {

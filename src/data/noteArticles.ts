@@ -8,6 +8,7 @@ const NoteContentSchema = z.object({
   eyecatch: z.string(),
   noteUrl: z.string(),
   name: z.string(),
+  id: z.number(),
 });
 
 const NoteApiResponseSchema = z.object({
