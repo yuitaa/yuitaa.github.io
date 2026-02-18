@@ -29,6 +29,8 @@ const ogpImage = new URL('ogp.png', Astro.site);
     <link rel="canonical" href={Astro.url} />
     <meta name="theme-color" content={siteConfig.color} />
 
+    <meta name="robots" content="noindex" />
+
     <meta property="og:site_name" content={siteConfig.title} />
     <meta property="og:url" content={Astro.url} />
     <meta property="og:title" content={pageTitle} />
